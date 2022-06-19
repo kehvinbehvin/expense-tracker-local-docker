@@ -1,0 +1,7 @@
+.idea/
+dump/
+build/
+tmp/
+temp/
+
+.env.*

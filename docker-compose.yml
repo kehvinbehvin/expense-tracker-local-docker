@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  mariadb:
+    image: mariadb:latest
+    restart: always
+    ports:
+      - "3306:3306"
+    env_file:
+      - .env.db
+    volumes:
+      - exp-tracker:/var/lib/mysql
+#      - ./dump/expense.sql:/docker-entrypoint-initdb.d/expense.sql
+
+  core:
+    image: kehvinbehvin/expensetracker:878c11-2
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.core
+    volumes:
+      - ../expense-tracker/build:/usr/src/app/build
+
+volumes:
+  exp-tracker:
