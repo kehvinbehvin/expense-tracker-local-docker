@@ -29,7 +29,7 @@ services:
     ports:
       - "3306:3306"
     env_file:
-      - .env.db
+      - .env
     volumes:
       - exp-tracker:/var/lib/mysql
       # - ./dump/expense_20220620.sql:/docker-entrypoint-initdb.d/expense_20220620.sql
@@ -38,7 +38,7 @@ services:
     container_name: "exp-core"
     image: kehvinbehvin/expensetracker:5827283
     ports:
-      - "3000:3000"
+      - "8080:8080"
     env_file:
       - .env.core
     volumes:
