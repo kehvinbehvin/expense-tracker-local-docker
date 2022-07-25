@@ -5,7 +5,7 @@
 
 ## Database setup
 - Create dump/restore folder for sql files to be mounted on mariadb service
-- Retrieve .env.db from kevin
+- Retrieve .env from kevin
 - Set database user host to % for development purposes
 
 ## Core setup
